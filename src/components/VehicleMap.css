@@ -1,0 +1,71 @@
+.map-wrapper {
+  height: 100vh;
+  width: 100%;
+  background: #0f172a;
+  position: relative;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+/* Loading & error states */
+.map-loader, .map-error {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  background: #111827;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #22d3ee;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Pulsing markers */
+.pulse-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+.pulse-dot.start {
+  background: #22c55e;
+  box-shadow: 0 0 15px #22c55e;
+}
+.pulse-dot.end {
+  background: #ef4444;
+  box-shadow: 0 0 15px #ef4444;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Vehicle animation */
+.car-icon {
+  font-size: 32px;
+  animation: float 1s ease-in-out infinite alternate;
+  text-shadow: 0 0 6px #22d3ee;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
